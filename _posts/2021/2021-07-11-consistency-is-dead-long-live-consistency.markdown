@@ -89,7 +89,7 @@ public class FooScreen extends ... {
 }
 ```
 
-As the new lines of code were being written, I could feel them pointing back at me and laughing. "This idiot is writing a HandlerThread in a 100% AsyncTask codebase; what a noob!".
+As I was writing the new lines of code, I could feel them pointing back at me and laughing. "This idiot is writing a HandlerThread in a 100% AsyncTask codebase; what a noob!".
 
 
 The point of this error would be to always strive for consistency as opposed to trying out new shiny things.
