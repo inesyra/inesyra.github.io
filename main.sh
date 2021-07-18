@@ -1,7 +1,10 @@
 #!/bin/bash
 
+# jekyll serve --watch --force_polling
+
 CON="inesyra-blog-500_0.0.1"
 IMA="inesyra/blog-500:0.0.1"
+
 
 if [ $1 = "up" ]; then
     docker start $CON 2>/dev/null || \

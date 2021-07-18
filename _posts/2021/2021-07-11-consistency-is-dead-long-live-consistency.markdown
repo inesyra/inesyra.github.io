@@ -23,7 +23,7 @@ The advanges of using HandlerThread seemed transparent:
 
 However, the disadvantages weighed heavily and boy did I regret the decision.
 - The code looked out of place since it broke existing consistency
-- It increased code opacity by introducing new concepts. The multithreading topic in Android is too vast and newer libraries aimed to overcome past drawbacks at the cost of introducing newer and newer ideas. If I were to rewrite the same code with a better solution I would opt for an Executor + runOnUiThread.
+- It increased code opacity by introducing new concepts. The multithreading topic in Android is too vast and newer libraries aim to overcome past drawbacks at the cost of introducing newer and newer ideas. If I were to rewrite the same code with a better solution I would opt for an Executor + runOnUiThread.
 - It increased the burden on other programmers to familiarize themselves with foreign code
 
 
@@ -39,9 +39,9 @@ public class FooScreen extends ... {
     }
 
     private void doTransaction(View view) {
-        String receipt = binding.receiptNoText.getText().toString();
-        String profileId = receipt.substring(0, 2);
-        String receiptNumber = receipt.substring(2);
+        // String receipt = binding.receiptNoText.getText().toString();
+        // String profileId = receipt.substring(0, 2);
+        // String receiptNumber = receipt.substring(2);
 
         findProfileAndAmount(profileId, receipt, new Handler(Looper.getMainLooper()) { // The main looper will execute on the desired main thread
             @Override
@@ -54,9 +54,9 @@ public class FooScreen extends ... {
                     return;
                 }
 
-                Intent intent = new Intent(getActivity(), BarActivity.class);
-                intent.putExtra(...);
-                startActivityForResult(intent, Transaction.TRANS_CODE);
+                // Intent intent = new Intent(getActivity(), BarActivity.class);
+                // intent.putExtra(...);
+                // startActivityForResult(intent, Transaction.TRANS_CODE);
             }
         });
     }
@@ -68,15 +68,15 @@ public class FooScreen extends ... {
         new Handler(profileThread.getLooper()).post(() -> {
             FooScreenQueryResult queryResult = new FooScreenQueryResult();
 
-            List<DBObject> profileList = DB.getPaymentProfile().selectBy(Profile.COLS.ID, profileId);
-            if (profileList.size() > 0) {
-                queryResult.profile = (Profile) profileList.get(0);
-            }
-
-            List<DBObject> batchTransactionList = DB.getBatchTransaction().selectBy(BatchTransaction.COLS.RECEIPT_NO, receipt);
-            if (batchTransactionList.size() > 0) {
-                queryResult.amount = ((BatchTransaction) batchTransactionList.get(0)).getAmount();
-            }
+            // List<DBObject> profileList = DB.getPaymentProfile().selectBy(Profile.COLS.ID, profileId);
+            // if (profileList.size() > 0) {
+            //     queryResult.profile = (Profile) profileList.get(0);
+            // }
+            //
+            // List<DBObject> batchTransactionList = DB.getBatchTransaction().selectBy(BatchTransaction.COLS.RECEIPT_NO, receipt);
+            // if (batchTransactionList.size() > 0) {
+            //     queryResult.amount = ((BatchTransaction) batchTransactionList.get(0)).getAmount();
+            // }
 
             responseHandler.obtainMessage(0, queryResult).sendToTarget(); // Send the found profile to the response handler
         });
@@ -90,6 +90,8 @@ public class FooScreen extends ... {
 ```
 
 As the new lines of code were being written, I could feel them pointing back at me and laughing. "This idiot is writing a HandlerThread in a 100% AsyncTask codebase; what a noob!".
+
+
 The point of this error would be to always strive for consistency as opposed to trying out new shiny things.
 This makes it easier for everyone involved to navigate code and modify it as needed.
 Keep things simple. When a refactoring is required, take time to discuss it with your team and agree together on a plan of action.

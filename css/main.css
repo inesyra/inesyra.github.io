@@ -525,7 +525,7 @@ footer .theme-by {
 }
 @media only screen and (min-width: 768px) {
   .intro-header {
-    margin-top: 130px;
+    margin-top: 13em;
   }
   .intro-header.big-img {
     margin-top: 91px;  /* Full navbar is small navbar + 20px padding on each side when expanded */
@@ -679,6 +679,10 @@ table tr td :last-child {
 pre {
   font-size: 16px;
   line-height: 1.5em;
+  
+  margin-top: 2em;
+  margin-left: -7em;
+  margin-right: -7em;
 }
 pre code {
   white-space: pre;
