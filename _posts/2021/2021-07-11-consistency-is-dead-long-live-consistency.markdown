@@ -26,6 +26,7 @@ However, the disadvantages weighed heavily and boy did I regret the decision.
 - It increased code opacity by introducing new concepts. The multithreading topic in Android is too vast and newer libraries aimed to overcome past drawbacks at the cost of introducing newer and newer ideas. If I were to rewrite the same code with a better solution I would opt for an Executor + runOnUiThread.
 - It increased the burden on other programmers to familiarize themselves with foreign code
 
+
 ```java
 // The code is pretty straightforward: when some button is clicked, do some action in the background and return the result to the UI thread
 public class FooScreen extends ... {

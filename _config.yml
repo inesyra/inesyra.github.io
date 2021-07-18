@@ -57,33 +57,33 @@ avatar: "/img/avatar.jpg"
 # Change all these values or delete the ones you don't want.
 # Important: you must keep the "name" parameter, everything else you can remove
 author:
-  name: Frederik inesyra
-  email: "f.inesyra@gmail.com"
+  name: George Vrancianu
+  email: "inesyra@gmail.com"
   github: inesyra
-  twitter: finesyra
-  linkedin: frederik-inesyra-226a33148
-  xing: yourname
-  stackoverflow: yourlink
+  twitter: inesyra
+  # linkedin: null
+  # xing: null
+  # stackoverflow: null
 
 
 # Select which links to show in the footer
 footer-links-active:
-  rss: true
-  facebook: false
-  email: true
-  twitter: true
-  github: true
-  linkedin: true
-  xing: false
-  stackoverflow: false
+  # rss: true
+  # facebook: false
+  # email: true
+  # twitter: true
+  # github: true
+  # linkedin: true
+  # xing: false
+  # stackoverflow: false
 
 
 # Select which share links to show in posts
 share-links-active:
-  twitter: true
-  facebook: true
-  google: false
-  linkedin: true
+  # twitter: true
+  # facebook: true
+  # google: false
+  # linkedin: true
 
 # How to display the link to the website in the footer
 # Remove this if you don't want a link in the footer
@@ -91,7 +91,7 @@ url-pretty: "inesyra.github.io"  # eg. "deanattali.com/beautiful-jekyll"
 
 # --- Misc --- #
 # Fill in your Disqus shortname (NOT the userid) if you want to support Disqus comments
-disqus: "inesyrablog"
+disqus: "inesyra"
 
 # Fill in your Google Analytics ID to track your website using GA
 google_analytics: "UA-96660715-1"
@@ -113,7 +113,7 @@ title-separator: "-"
 # --- Don't need to touch anything below here (but you can if you want) --- #
 
 # Output options (more information on Jekyll's site)
-timezone: "Europe/Berlin"
+timezone: "Europe/Bucharest"
 markdown: kramdown
 highlighter: rouge
 #permalink: /:year/:month/:day/:title/.html
